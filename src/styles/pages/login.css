@@ -1,0 +1,38 @@
+/* login.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35%;
+    
+}
+  
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px; /* Ajustez la marge supérieure du formulaire */
+}
+
+.title-container {
+    margin-bottom: 40px; /* Ajustez la marge inférieure du titre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50px;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: medium;
+}
+
+.btn-connexion {
+    margin: 15px;
+}
+
+.btn-register {
+    margin: 15px;
+}

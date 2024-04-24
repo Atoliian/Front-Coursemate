@@ -1,0 +1,16 @@
+.card {
+    position: relative;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../public/assets/cart-image/cart1.jpg'); /* Chemin vers votre image */
+    background-size: cover; /* Assure que l'image couvre toute la carte */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    opacity: 0.6; /* Optionnel : réglez l'opacité de l'image de fond */
+  }
+  

@@ -1,2 +1,20 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+.swipe-options {
+  --modify-option-background: #159215a2; /* Vert */
+  --modify-option-color: #ffffff; /* Texte blanc */
+
+  --delete-option-background: #ff0000; /* Rouge */
+  --delete-option-color: #ffffff; /* Texte blanc */
+}
+
+.modify-option {
+  --background: var(--modify-option-background);
+  color: var(--modify-option-color);
+}
+
+.delete-option {
+  --background: var(--delete-option-background);
+  color: var(--delete-option-color);
+}

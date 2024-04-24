@@ -1,18 +1,18 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import '../styles/pages/Tab3.css';
+import '../styles/pages/Tab4.css';
 
-const Tab3: React.FC = () => {
+const Tab4: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Tab 4</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
+            <IonTitle size="large">Tab 4</IonTitle>
           </IonToolbar>
         </IonHeader>
 
@@ -22,4 +22,4 @@ const Tab3: React.FC = () => {
   );
 };
 
-export default Tab3;
+export default Tab4;

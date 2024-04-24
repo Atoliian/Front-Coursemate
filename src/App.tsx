@@ -10,10 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { person, alert, cart, book } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import Tab4 from './pages/Tab4';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,42 +45,61 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Login from './pages/Login';
+
 
 setupIonicReact();
+const isLoginPage = window.location.pathname === "/login" || window.location.pathname === "/";
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+    {isLoginPage ? (
+          <Route exact path="/login">
+            <Login />
+          </Route>
+        ) : (
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
+          <Route exact path="/my-carts">
             <Tab1 />
           </Route>
-          <Route exact path="/tab2">
+          <Route exact path="/my-profil">
             <Tab2 />
           </Route>
-          <Route path="/tab3">
+          <Route exact path="/consumption-alert">
             <Tab3 />
           </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
+          <Route exact path="/my-recipes">
+            <Tab4 />
           </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/" render={() => <Redirect to="/login" />} />
         </IonRouterOutlet>
+
+
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="tab1" href="/my-carts">
+            <IonIcon aria-hidden="true" icon={cart} />
+            <IonLabel>Mes paniers</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="tab2" href="/my-profil">
+            <IonIcon aria-hidden="true" icon={person} />
+            <IonLabel>Mon profil</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="tab3" href="/consumption-alert">
+            <IonIcon aria-hidden="true" icon={alert} />
+            <IonLabel>Alerte conso</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab4" href="/my-recipes">
+            <IonIcon aria-hidden="true" icon={book} />
+            <IonLabel>Idées recettes</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
+      )}
     </IonReactRouter>
   </IonApp>
 );
