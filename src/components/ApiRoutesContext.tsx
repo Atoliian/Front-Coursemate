@@ -3,8 +3,12 @@ import React, { createContext, useContext, ReactNode } from 'react';
 // Définissez le type pour vos routes API
 type ApiRoutes = {
     getMyBrackets: string;
+    getDetailBracket: string;
     getLogin: string;
     getMyInformations: string;
+    getSearchItem: string;
+    addItemInBracket: string;
+    removeItemInBracket: string;
     // Ajoutez d'autres routes API au besoin
 };
 

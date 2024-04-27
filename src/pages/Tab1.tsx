@@ -39,7 +39,8 @@ const Tab1: React.FC = () => {
         setCarts(jsonData.brackets);
       } catch (error) {
         console.error("Error fetching data:", error);
-        history.push("/");
+        history.push("/login");
+        window.location.reload();
       }
     };
 

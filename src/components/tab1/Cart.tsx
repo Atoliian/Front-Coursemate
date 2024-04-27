@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem, IonIcon, IonItemOption, IonItemOptions, IonItemSliding } from '@ionic/react';
 import { createOutline, trashOutline } from 'ionicons/icons';
+import { useHistory } from "react-router-dom";
 
 interface CartData {
   bracket: {
@@ -21,6 +22,7 @@ interface CartData {
 const Cart: React.FC<CartData> = ({ bracket }) => {
   const [backgroundColor, setBackgroundColor] = useState<string>('');
   const [nbExpiration, setNbExpiration] = useState<number>(1);
+  const history = useHistory();
 
   useEffect(() => {
     const getRandomColor = () => {
@@ -63,7 +65,7 @@ const Cart: React.FC<CartData> = ({ bracket }) => {
           </IonItem>
 
           <IonItemOptions side="end">
-            <IonItemOption onClick={() => console.log(`Modifier ${bracket.id}`)} className="modify-option">
+            <IonItemOption onClick={() => history.push(`/details-cart/${bracket.id}`)} className="modify-option">
               <IonIcon slot="icon-only" icon={createOutline} />
             </IonItemOption>
             <IonItemOption onClick={() => console.log(`Supprimer ${bracket.id}`)} className="delete-option">

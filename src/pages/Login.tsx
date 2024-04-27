@@ -58,6 +58,7 @@ const Login: React.FC = () => {
             localStorage.setItem("me", JSON.stringify(jsonData));
             // Rediriger l'utilisateur vers la page d'accueil ou toute autre page appropriée
             history.push("/my-carts");
+            window.location.reload();
           } catch (error){
             setLoginError("Une erreur est survenue à la récuperation de vos informations." );
           }

@@ -15,6 +15,8 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
+import Login from './pages/Login';
+import DetailCart from './pages/DetailCart';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -45,7 +47,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Login from './pages/Login';
+
 
 
 setupIonicReact();
@@ -75,6 +77,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/details-cart/:id">
+            <DetailCart/>
           </Route>
           <Route exact path="/" render={() => <Redirect to="/login" />} />
         </IonRouterOutlet>
